@@ -1,0 +1,40 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Folio",
+      "hasCanvas": false,
+      "bodyTextLen": 195,
+      "bodyTextHash": "ec8769ab802a9ba5c8d4b09c062a270380cc5555de4961e57c6a4b72f1761758",
+      "bodyTextPrefix": "folio Create your account Your workspace starts empty. Nothing i",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Folio",
+      "hasCanvas": false,
+      "bodyTextLen": 195,
+      "bodyTextHash": "ec8769ab802a9ba5c8d4b09c062a270380cc5555de4961e57c6a4b72f1761758",
+      "bodyTextPrefix": "folio Create your account Your workspace starts empty. Nothing i",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": true,
+  "baselineReasons": [
+    "desktop: body text changed (0 -> 195 chars, hash mismatch)"
+  ]
+}

@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", Palatino, Georgia, serif;
+  --color-bg: #f4f1ea;
+  --color-surface: #fffcf7;
+  --color-surface-2: #efeae1;
+  --color-fg: #1c1915;
+  --color-muted: #6e665c;
+  --color-accent: #0e6b4f;
+  --color-accent-ink: #f4fbf7;
+  --color-line: #e4dcd0;
+  --radius-card: 0.875rem;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+    color: var(--color-fg);
+  }
+}
+
+.num {
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-variation-settings: "opsz" 72, "SOFT" 30;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
