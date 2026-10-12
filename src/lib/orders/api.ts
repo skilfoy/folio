@@ -133,7 +133,7 @@ export const syncAmazonAccount = createServerFn({ method: "POST" })
     const sql = await getSql();
     await sql`
       update folio_accounts
-      set sync_error = ${"Sync did not run. No Amazon session is connected."}
+      set sync_error = null
       where id = ${id} and user_id = ${context.userId}
     `;
     return readLedger(context.userId);

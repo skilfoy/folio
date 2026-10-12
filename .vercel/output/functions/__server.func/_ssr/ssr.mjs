@@ -122,7 +122,7 @@ var HEADERS = { TSS_SHELL: "X-TSS_SHELL" };
 * the dev styles URL for route-scoped CSS collection.
 */
 async function getStartManifest(matchedRoutes) {
-	const { tsrStartManifest } = await import("../_tanstack-start-manifest_v-CDvPu9nb.mjs");
+	const { tsrStartManifest } = await import("../_tanstack-start-manifest_v-C3ijqfE2.mjs");
 	const startManifest = tsrStartManifest();
 	let routes = startManifest.routes;
 	routes[rootRouteId];
@@ -144,27 +144,27 @@ async function getStartManifest(matchedRoutes) {
 var manifest = {
 	"13c3e3c4ee97861eb7711e85bde14c923a14c0849f259bf1267b91c7092d94bf": {
 		functionName: "loadLedger_createServerFn_handler",
-		importer: () => import("./api-DemAZX4N.mjs")
+		importer: () => import("./api-hy3bsWbL.mjs")
 	},
 	"3568e796e41cb27491ad52a54ddba4f5cd39ccc63cb3881032cf73184a9b8e28": {
 		functionName: "linkAmazonAccount_createServerFn_handler",
-		importer: () => import("./api-DemAZX4N.mjs")
+		importer: () => import("./api-hy3bsWbL.mjs")
 	},
 	"4e0fa0c65acf8b8d6ec83fa38e2eb634280490c54187e8953e8bbb6aa8428644": {
 		functionName: "syncAmazonAccount_createServerFn_handler",
-		importer: () => import("./api-DemAZX4N.mjs")
+		importer: () => import("./api-hy3bsWbL.mjs")
 	},
 	"54780a91376b66897a816a429e2a86c4b26cc77110eacd62f87b19e2a00251c4": {
 		functionName: "removeAmazonAccount_createServerFn_handler",
-		importer: () => import("./api-DemAZX4N.mjs")
+		importer: () => import("./api-hy3bsWbL.mjs")
 	},
 	"70773cb8550d507a92dc63790ce0b4c7aff9318d247a3f350ae30426db10ee9b": {
 		functionName: "setAccountAutoSync_createServerFn_handler",
-		importer: () => import("./api-DemAZX4N.mjs")
+		importer: () => import("./api-hy3bsWbL.mjs")
 	},
 	"a2476a5097d09d705747546587c9f82114ff9a5d9768c7f4336797b809cfbc7c": {
 		functionName: "clearLedger_createServerFn_handler",
-		importer: () => import("./api-DemAZX4N.mjs")
+		importer: () => import("./api-hy3bsWbL.mjs")
 	}
 };
 async function getServerFnById(id, access) {
@@ -1569,7 +1569,7 @@ var getBaseManifest = getProdBaseManifest;
 var createEarlyHintsForRequest = createEarlyHintsCollector;
 async function loadEntries() {
 	const [routerEntry, startEntry, pluginAdapters] = await Promise.all([
-		import("./router-Dw5um9SI.mjs").then((n) => n.t),
+		import("./router-CAsJlV_U.mjs").then((n) => n.t),
 		import("./start-5Z2QO8AU.mjs"),
 		import("./empty-plugin-adapters-D9UWiqvJ.mjs")
 	]);

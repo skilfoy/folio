@@ -17,7 +17,7 @@ export function Dashboard({
   return (
     <div className="flex flex-col gap-4">
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-        <Stat label="Total orders" value={String(summary.total)} hint="Every status" />
+        <Stat label="Total orders" value={String(summary.total)} hint="Includes cancelled" />
         <Stat label="Shipped" value={String(summary.shipped)} hint="In transit" />
         <Stat label="Delivered" value={String(summary.delivered)} hint="Received" />
         <Stat label="Pending" value={String(summary.pending)} hint="Not shipped yet" />
@@ -25,8 +25,8 @@ export function Dashboard({
 
       <div className="grid gap-3 md:grid-cols-3">
         <Stat label="Total spent" value={money(summary.spentCents)} hint="Excludes cancelled" />
-        <Stat label="Average order" value={money(summary.averageCents)} hint="Across billed orders" />
-        <Stat label="Pending value" value={money(summary.pendingCents)} hint="Still open" />
+        <Stat label="Average order" value={money(summary.averageCents)} hint="Excludes cancelled" />
+        <Stat label="Pending value" value={money(summary.pendingCents)} hint="Not shipped yet" />
       </div>
 
       <div className="grid gap-4 xl:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
@@ -39,7 +39,7 @@ export function Dashboard({
           }
         >
           {summary.latest.length === 0 ? (
-            <p className="text-sm text-muted">No orders for this account yet.</p>
+            <p className="text-sm text-muted">No orders yet.</p>
           ) : (
             <ul className="divide-y divide-line">
               {summary.latest.map((order) => (
@@ -63,7 +63,7 @@ export function Dashboard({
 
         <Panel title="Top products" action={<span className="text-xs text-muted">By quantity</span>}>
           {summary.topProducts.length === 0 ? (
-            <p className="text-sm text-muted">Products show up after a sync.</p>
+            <p className="text-sm text-muted">No products yet.</p>
           ) : (
             <ol className="flex flex-col gap-3">
               {summary.topProducts.map((product, index) => (

@@ -1,0 +1,1 @@
+import{t as e}from"./login-screen-GIb-B5RO.js";var t=e;export{t as component};

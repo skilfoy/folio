@@ -7,9 +7,9 @@
       "status": 200,
       "title": "Folio",
       "hasCanvas": false,
-      "bodyTextLen": 195,
-      "bodyTextHash": "ec8769ab802a9ba5c8d4b09c062a270380cc5555de4961e57c6a4b72f1761758",
-      "bodyTextPrefix": "folio Create your account Your workspace starts empty. Nothing i",
+      "bodyTextLen": 223,
+      "bodyTextHash": "549c1f7eacc63908da23e4d6c1725a0fc85051e3c2a683027baec4461a335d8a",
+      "bodyTextPrefix": "folio Create your account This is the Folio login for your Amazo",
       "horizontalOverflow": false,
       "consoleErrors": [],
       "pageErrors": [],
@@ -21,9 +21,9 @@
       "status": 200,
       "title": "Folio",
       "hasCanvas": false,
-      "bodyTextLen": 195,
-      "bodyTextHash": "ec8769ab802a9ba5c8d4b09c062a270380cc5555de4961e57c6a4b72f1761758",
-      "bodyTextPrefix": "folio Create your account Your workspace starts empty. Nothing i",
+      "bodyTextLen": 223,
+      "bodyTextHash": "549c1f7eacc63908da23e4d6c1725a0fc85051e3c2a683027baec4461a335d8a",
+      "bodyTextPrefix": "folio Create your account This is the Folio login for your Amazo",
       "horizontalOverflow": false,
       "consoleErrors": [],
       "pageErrors": [],
@@ -35,6 +35,7 @@
   "verdictFile": "/workspace/screenshots/app-builder-built.json",
   "divergesFromBaseline": true,
   "baselineReasons": [
-    "desktop: body text changed (0 -> 195 chars, hash mismatch)"
+    "desktop: body text changed (0 -> 223 chars, hash mismatch)",
+    "mobile: body text changed (195 -> 223 chars, hash mismatch)"
   ]
 }

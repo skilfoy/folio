@@ -1,6 +1,6 @@
 import { i as TSS_SERVER_FUNCTION, r as createServerFn } from "./ssr.mjs";
 import { t as authMiddleware } from "./middleware-jwEEWmOB.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/api-DemAZX4N.js
+//#region node_modules/.nitro/vite/services/ssr/assets/api-hy3bsWbL.js
 var createServerRpc = (serverFnMeta, splitImportFn) => {
 	const url = "/_serverFn/" + serverFnMeta.id;
 	return Object.assign(splitImportFn, {
@@ -128,7 +128,7 @@ var syncAmazonAccount = createServerFn({ method: "POST" }).validator((id) => {
 	const { getSql } = await import("./db-ZavYao0D.mjs").then((n) => n.t).then((n) => n.t);
 	await (await getSql())`
       update folio_accounts
-      set sync_error = ${"Sync did not run. No Amazon session is connected."}
+      set sync_error = null
       where id = ${id} and user_id = ${context.userId}
     `;
 	return readLedger(context.userId);

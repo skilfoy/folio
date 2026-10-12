@@ -30,6 +30,7 @@ export function Orders({ orders, accounts }: { orders: Order[]; accounts: Accoun
 
   return (
     <div className="flex flex-col gap-4">
+      <h1 className="font-display text-3xl text-fg">Orders</h1>
       <div className="flex flex-col gap-3 md:flex-row md:items-center">
         <label className="relative min-w-0 flex-1">
           <span className="sr-only">Search orders</span>
@@ -65,7 +66,9 @@ export function Orders({ orders, accounts }: { orders: Order[]; accounts: Accoun
 
       <div className="overflow-hidden rounded-xl border border-line bg-surface">
         {visible.length === 0 ? (
-          <p className="px-4 py-8 text-sm text-muted">Nothing matches that search.</p>
+          <p className="px-4 py-8 text-sm text-muted">
+            {orders.length === 0 && !query && status === "all" ? "No orders yet." : "No orders match this search."}
+          </p>
         ) : (
           <ul className="divide-y divide-line">
             {visible.map((order) => {

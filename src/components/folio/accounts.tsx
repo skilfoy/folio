@@ -95,7 +95,7 @@ export function Accounts({
       </div>
 
       {slice.length === 0 ? (
-        <p className="px-5 py-10 text-sm text-muted">No accounts yet. Add an Amazon account to start a sync.</p>
+        <p className="px-5 py-10 text-sm text-muted">No Amazon accounts on this list yet.</p>
       ) : (
         <ul className="divide-y divide-line">
           {slice.map((account) => (
@@ -339,7 +339,6 @@ export function AddAccountWizard({
                     </div>
                   </div>
                 </div>
-                <p className="mt-3 text-xs text-muted">Other retailers are planned. Amazon is the only one that can be linked today.</p>
                 <div className="mt-8 flex justify-end">
                   <Button variant="primary" onClick={() => setStep(2)}>
                     Continue
@@ -351,8 +350,7 @@ export function AddAccountWizard({
             {step === 2 ? (
               <form onSubmit={login}>
                 <h3 className="font-display text-2xl text-fg">Amazon Account Info</h3>
-                <p className="mt-1 text-sm text-muted">Please enter your Amazon email and password to connect your account.</p>
-                <p className="mt-1 text-sm text-muted">Password is not saved.</p>
+                <p className="mt-1 text-sm text-muted">Use the email and password for the Amazon account you are adding.</p>
                 <label className="mt-4 block text-sm font-semibold text-fg">
                   Email
                   <input
@@ -401,7 +399,7 @@ export function AddAccountWizard({
             {step === 3 ? (
               <div>
                 <h3 className="font-display text-2xl text-fg">Authorize Account</h3>
-                <p className="mt-1 text-sm text-muted">Confirm Folio can read orders, shipments, and item totals for this account.</p>
+                <p className="mt-1 text-sm text-muted">Confirm {email} at www.amazon.com is the account to add.</p>
                 <div className="mt-5 rounded-xl border border-line p-4">
                   <p className="text-sm font-semibold text-fg">{email}</p>
                   <p className="text-sm text-muted">Amazon · www.amazon.com</p>
@@ -417,8 +415,8 @@ export function AddAccountWizard({
 
             {step === 4 ? (
               <div>
-                <h3 className="font-display text-2xl text-fg">Account added</h3>
-                <p className="mt-1 text-sm text-muted">{email} is linked. It has no orders until a sync returns them.</p>
+                <h3 className="font-display text-2xl text-fg">Account linked</h3>
+                <p className="mt-1 text-sm text-muted">{email} is now on your Accounts list.</p>
                 <div className="mt-8 flex justify-end">
                   <Button
                     variant="primary"

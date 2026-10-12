@@ -4,10 +4,10 @@ import { a as getServerFnById, i as TSS_SERVER_FUNCTION, r as createServerFn } f
 import { t as authMiddleware } from "./middleware-jwEEWmOB.mjs";
 import { i as signOut, r as signIn, t as authClient } from "./client-IWHfIGH2.mjs";
 import { a as hasGateSessionMarker, t as GROK_PROVIDERS } from "./server-DFGDUo7c.mjs";
-import { a as StatusPill, i as Panel, n as Button, o as cn, r as LoginScreen, s as fieldClass, t as AmazonMark } from "./login-screen-ul2O_Xcq.mjs";
+import { a as StatusPill, i as Panel, n as Button, o as cn, r as LoginScreen, s as fieldClass, t as AmazonMark } from "./login-screen-yOJuARKq.mjs";
 import { a as Search, c as LayoutDashboard, d as EyeOff, i as Settings, l as Funnel, n as Users, o as RefreshCw, s as Receipt, t as X, u as Eye } from "../_libs/lucide-react.mjs";
 import { t as create } from "../_libs/zustand.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-Gs5pScSP.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-Bl_NlL-u.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function orderTotal(order) {
@@ -174,7 +174,7 @@ function Accounts({ accounts, onSync, onAutoSync, onRemove, onAdd }) {
 			}),
 			slice.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "px-5 py-10 text-sm text-muted",
-				children: "No accounts yet. Add an Amazon account to start a sync."
+				children: "No Amazon accounts on this list yet."
 			}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 				className: "divide-y divide-line",
 				children: slice.map((account) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
@@ -451,10 +451,6 @@ function AddAccountWizard({ open, onClose, onLinked }) {
 								})] })]
 							})
 						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "mt-3 text-xs text-muted",
-							children: "Other retailers are planned. Amazon is the only one that can be linked today."
-						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 							className: "mt-8 flex justify-end",
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
@@ -473,11 +469,7 @@ function AddAccountWizard({ open, onClose, onLinked }) {
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "mt-1 text-sm text-muted",
-								children: "Please enter your Amazon email and password to connect your account."
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "mt-1 text-sm text-muted",
-								children: "Password is not saved."
+								children: "Use the email and password for the Amazon account you are adding."
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
 								className: "mt-4 block text-sm font-semibold text-fg",
@@ -538,9 +530,13 @@ function AddAccountWizard({ open, onClose, onLinked }) {
 							className: "font-display text-2xl text-fg",
 							children: "Authorize Account"
 						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
 							className: "mt-1 text-sm text-muted",
-							children: "Confirm Folio can read orders, shipments, and item totals for this account."
+							children: [
+								"Confirm ",
+								email,
+								" at www.amazon.com is the account to add."
+							]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "mt-5 rounded-xl border border-line p-4",
@@ -567,11 +563,11 @@ function AddAccountWizard({ open, onClose, onLinked }) {
 					step === 4 ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
 							className: "font-display text-2xl text-fg",
-							children: "Account added"
+							children: "Account linked"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
 							className: "mt-1 text-sm text-muted",
-							children: [email, " is linked. It has no orders until a sync returns them."]
+							children: [email, " is now on your Accounts list."]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 							className: "mt-8 flex justify-end",
@@ -602,7 +598,7 @@ function Dashboard({ orders, accounts, onOpenOrders }) {
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Stat, {
 						label: "Total orders",
 						value: String(summary.total),
-						hint: "Every status"
+						hint: "Includes cancelled"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Stat, {
 						label: "Shipped",
@@ -632,12 +628,12 @@ function Dashboard({ orders, accounts, onOpenOrders }) {
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Stat, {
 						label: "Average order",
 						value: money(summary.averageCents),
-						hint: "Across billed orders"
+						hint: "Excludes cancelled"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Stat, {
 						label: "Pending value",
 						value: money(summary.pendingCents),
-						hint: "Still open"
+						hint: "Not shipped yet"
 					})
 				]
 			}),
@@ -653,7 +649,7 @@ function Dashboard({ orders, accounts, onOpenOrders }) {
 					}),
 					children: summary.latest.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "text-sm text-muted",
-						children: "No orders for this account yet."
+						children: "No orders yet."
 					}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 						className: "divide-y divide-line",
 						children: summary.latest.map((order) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
@@ -689,7 +685,7 @@ function Dashboard({ orders, accounts, onOpenOrders }) {
 					}),
 					children: summary.topProducts.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "text-sm text-muted",
-						children: "Products show up after a sync."
+						children: "No products yet."
 					}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ol", {
 						className: "flex flex-col gap-3",
 						children: summary.topProducts.map((product, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
@@ -783,6 +779,10 @@ function Orders({ orders, accounts }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "flex flex-col gap-4",
 		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+				className: "font-display text-3xl text-fg",
+				children: "Orders"
+			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "flex flex-col gap-3 md:flex-row md:items-center",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
@@ -826,7 +826,7 @@ function Orders({ orders, accounts }) {
 				className: "overflow-hidden rounded-xl border border-line bg-surface",
 				children: visible.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "px-4 py-8 text-sm text-muted",
-					children: "Nothing matches that search."
+					children: orders.length === 0 && !query && status === "all" ? "No orders yet." : "No orders match this search."
 				}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 					className: "divide-y divide-line",
 					children: visible.map((order) => {
@@ -887,13 +887,13 @@ function Settings$1({ accountCount, onClear }) {
 			title: "Linked accounts",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "text-sm text-muted",
-				children: accountCount === 0 ? "No Amazon accounts are linked." : `${accountCount} Amazon ${accountCount === 1 ? "account is" : "accounts are"} linked. Removing them deletes their orders from this browser.`
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+				children: accountCount === 0 ? "No Amazon accounts are linked." : `${accountCount} Amazon ${accountCount === 1 ? "account is" : "accounts are"} linked. Removing one deletes its orders from Folio.`
+			}), accountCount > 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 				type: "button",
 				className: "mt-4 h-11 rounded-lg border border-line px-4 text-sm font-semibold text-fg hover:bg-surface-2",
 				onClick: onClear,
 				children: "Remove all accounts"
-			})]
+			}) : null]
 		})
 	});
 }
@@ -1218,7 +1218,7 @@ function Workspace() {
 						children: [
 							!ready ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "text-sm text-muted",
-								children: "Loading accounts…"
+								children: "Loading your accounts and orders…"
 							}) : null,
 							ready && view === "dashboard" ? accounts.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Empty, { onAdd: openWizard }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dashboard, {
 								orders: visibleOrders,
@@ -1273,11 +1273,11 @@ function Empty({ onAdd }) {
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
 				className: "font-display text-3xl text-fg",
-				children: "No accounts linked"
+				children: "Dashboard"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "mx-auto mt-2 max-w-md text-sm text-muted",
-				children: "This workspace has no linked accounts and no orders."
+				children: "Spending, shipments, and top products land here after an Amazon account on the Accounts page has orders."
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 				type: "button",

@@ -3,8 +3,8 @@ import { _ as createFileRoute, b as require_jsx_runtime, d as Scripts, f as Head
 import { L as string, N as number, P as object, R as union, j as literal } from "../_libs/@better-auth/core+[...].mjs";
 import { n as auth } from "./server-DFGDUo7c.mjs";
 import { r as TriangleAlert } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-Dw5um9SI.js
-var router_Dw5um9SI_exports = /* @__PURE__ */ __exportAll({ getRouter: () => getRouter });
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CAsJlV_U.js
+var router_CAsJlV_U_exports = /* @__PURE__ */ __exportAll({ getRouter: () => getRouter });
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var FALLBACK_MESSAGE = "An unexpected error occurred. Try reloading the page.";
@@ -345,7 +345,7 @@ var Route$3 = createRootRoute({
 			{ title: APP_NAME },
 			{
 				name: "description",
-				content: "Folio links Amazon accounts, syncs orders, and shows spending, shipments, and top products."
+				content: "Folio keeps the Amazon accounts you add, and shows their orders, spending, shipments, and top products."
 			},
 			{
 				name: "theme-color",
@@ -396,9 +396,9 @@ var Route$3 = createRootRoute({
 		] })]
 	})
 });
-var $$splitComponentImporter$1 = () => import("./routes-Gs5pScSP.mjs");
+var $$splitComponentImporter$1 = () => import("./routes-Bl_NlL-u.mjs");
 var Route$2 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-BMI_pvJl.mjs");
+var $$splitComponentImporter = () => import("./login-BKKVc8ZQ.mjs");
 var Route$1 = createFileRoute("/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var Route = createFileRoute("/api/auth/$")({ server: { handlers: {
 	GET: ({ request }) => auth.handler(request),
@@ -430,4 +430,4 @@ function getRouter() {
 	});
 }
 //#endregion
-export { getRouter, router_Dw5um9SI_exports as t };
+export { getRouter, router_CAsJlV_U_exports as t };

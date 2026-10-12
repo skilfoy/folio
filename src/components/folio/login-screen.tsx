@@ -43,7 +43,11 @@ export function LoginScreen() {
       <div className="w-full max-w-md rounded-xl border border-line bg-surface p-6">
         <p className="font-display text-4xl tracking-tight text-accent">folio</p>
         <h1 className="mt-6 font-display text-3xl text-fg">{mode === "up" ? "Create your account" : "Sign in"}</h1>
-        <p className="mt-2 text-sm text-muted">Your workspace starts empty. Nothing is loaded until you add it.</p>
+        <p className="mt-2 text-sm text-muted">
+          {mode === "up"
+            ? "This is the Folio login for your Amazon order history. Amazon accounts are added after this."
+            : "Sign in to the Folio account that holds your linked Amazon accounts and orders."}
+        </p>
 
         <form className="mt-6 flex flex-col gap-3" onSubmit={submit}>
           {mode === "up" ? (

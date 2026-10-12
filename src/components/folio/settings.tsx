@@ -13,15 +13,17 @@ export function Settings({
         <p className="text-sm text-muted">
           {accountCount === 0
             ? "No Amazon accounts are linked."
-            : `${accountCount} Amazon ${accountCount === 1 ? "account is" : "accounts are"} linked. Removing them deletes their orders from this browser.`}
+            : `${accountCount} Amazon ${accountCount === 1 ? "account is" : "accounts are"} linked. Removing one deletes its orders from Folio.`}
         </p>
-        <button
-          type="button"
-          className="mt-4 h-11 rounded-lg border border-line px-4 text-sm font-semibold text-fg hover:bg-surface-2"
-          onClick={onClear}
-        >
-          Remove all accounts
-        </button>
+        {accountCount > 0 ? (
+          <button
+            type="button"
+            className="mt-4 h-11 rounded-lg border border-line px-4 text-sm font-semibold text-fg hover:bg-surface-2"
+            onClick={onClear}
+          >
+            Remove all accounts
+          </button>
+        ) : null}
       </Panel>
     </div>
   );

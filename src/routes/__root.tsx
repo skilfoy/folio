@@ -14,7 +14,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Folio links Amazon accounts, syncs orders, and shows spending, shipments, and top products.",
+          "Folio keeps the Amazon accounts you add, and shows their orders, spending, shipments, and top products.",
       },
       { name: "theme-color", content: "#f4f1ea" },
     ],

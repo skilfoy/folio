@@ -106,7 +106,7 @@ function Workspace() {
           </header>
 
           <main className="px-4 py-5 pb-24 md:px-6 md:py-6 lg:pb-6">
-            {!ready ? <p className="text-sm text-muted">Loading accounts…</p> : null}
+            {!ready ? <p className="text-sm text-muted">Loading your accounts and orders…</p> : null}
             {ready && view === "dashboard" ? (
               accounts.length === 0 ? (
                 <Empty onAdd={openWizard} />
@@ -158,9 +158,9 @@ function Workspace() {
 function Empty({ onAdd }: { onAdd: () => void }) {
   return (
     <div className="rounded-xl border border-line bg-surface px-6 py-12 text-center">
-      <h1 className="font-display text-3xl text-fg">No accounts linked</h1>
+      <h1 className="font-display text-3xl text-fg">Dashboard</h1>
       <p className="mx-auto mt-2 max-w-md text-sm text-muted">
-        This workspace has no linked accounts and no orders.
+        Spending, shipments, and top products land here after an Amazon account on the Accounts page has orders.
       </p>
       <button type="button" className="mt-6 h-11 rounded-lg bg-accent px-4 text-sm font-semibold text-accent-ink" onClick={onAdd}>
         Add Account

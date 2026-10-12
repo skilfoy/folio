@@ -2,7 +2,7 @@ import { o as __toESM } from "../_runtime.mjs";
 import { b as require_jsx_runtime, q as require_react } from "../_libs/@tanstack/react-router+[...].mjs";
 import { r as signIn, t as authClient } from "./client-IWHfIGH2.mjs";
 import { t as GROK_PROVIDERS } from "./server-DFGDUo7c.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/login-screen-ul2O_Xcq.js
+//#region node_modules/.nitro/vite/services/ssr/assets/login-screen-yOJuARKq.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function cn(...parts) {
@@ -95,7 +95,7 @@ function LoginScreen() {
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mt-2 text-sm text-muted",
-					children: "Your workspace starts empty. Nothing is loaded until you add it."
+					children: mode === "up" ? "This is the Folio login for your Amazon order history. Amazon accounts are added after this." : "Sign in to the Folio account that holds your linked Amazon accounts and orders."
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
 					className: "mt-6 flex flex-col gap-3",
